@@ -8,9 +8,9 @@ const MainTemplates = ({children}) => {
     <div>
       <ChakraProvider>
       <Box  w='100%'   h='100%'    bgGradient={[
-            'linear(to-tr, gray.900, gray.300)',
-    'linear(to-t, gray.900, gray.300)',
-    'linear(to-b, gray.900, gray.300)',
+            'linear(to-tr, gray.700, gray.300)',
+    'linear(to-t, gray.700, gray.300)',
+    'linear(to-b, gray.700, gray.300)',
   ]}>
       <NavBar />
       
