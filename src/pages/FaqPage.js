@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
+import MainTemplates from '../templetaes/MainTemplates';
 
 const FaqPage = () => {
   return (
+    <div><MainTemplates>
     <Box py="20" maxW="800px" mx="auto">
       <Accordion allowToggle>
         <AccordionItem>
@@ -65,6 +67,7 @@ const FaqPage = () => {
         {/* Dodaj więcej pytań i odpowiedzi jako kolejne elementy AccordionItem */}
       </Accordion>
     </Box>
+    </MainTemplates></div>
   );
 };
 
