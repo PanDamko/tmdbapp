@@ -12,6 +12,26 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 //HomePage, MoviePage, ActorPage, FaqPage, RulesPage
 function App() {
+
+
+  const getCountries = async () => {
+    const url = query ? `https://restcountries.com/v3.1/name/${query}` : 'https://restcountries.com/v3.1/all'
+    try {
+      
+      const response = await fetch(url);
+      if(response.ok) {
+        const data = await response.json()
+        setCountries(data)
+      } else {
+        setError("Nie udało się pobrać danych")
+      }
+      
+    } catch (error) {
+      console.log("Nie udało się pobrać danych")
+    }
+
+  }
+
   return (
     <div>
 
