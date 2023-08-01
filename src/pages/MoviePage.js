@@ -17,6 +17,7 @@ const MoviePage = () => {
     rating: '7.5',
     director: 'Leigh Whannell',
     screenplay: 'Scott Teems',
+    bgImage: 'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/i2GVEvltEu3BXn5crBSxgKuTaca.jpg',
   };
 
   const tabStyles = {
@@ -43,6 +44,7 @@ const MoviePage = () => {
   return (
     <div>
     <MainTemplates>
+    <Box backgroundImage={`${movieData.bgImage}`} backgroundSize="cover" backgroundPosition="center" minHeight="50vh" >
     <Tabs isFitted variant="enclosed">
       <TabList mb="1em">
         <Tab {...tabStyles} icon={<FontAwesomeIcon icon={faThList} />} fontSize="lg">
@@ -108,7 +110,7 @@ const MoviePage = () => {
         </TabPanel>
       </TabPanels>
     </Tabs>
-        
+    </Box>
     </MainTemplates>
     </div>
   )
