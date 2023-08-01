@@ -1,8 +1,7 @@
 import React from 'react'
 import MainTemplates from '../templetaes/MainTemplates'
-import { Tab, TabList, TabPanel, TabPanels, Tabs, Box, Image, Text, Button, Link, VStack } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThList, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+import { Icon, TabPanel, TabPanels, Tabs, Box, Image, Text, Button, Link, VStack } from '@chakra-ui/react';
+import { FaPlayCircle } from 'react-icons/fa';
 
 const MoviePage = () => {
   const movieData = {
@@ -20,49 +19,23 @@ const MoviePage = () => {
     bgImage: 'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/i2GVEvltEu3BXn5crBSxgKuTaca.jpg',
   };
 
-  const tabStyles = {
-    borderRadius: '0',
-    borderBottom: '2px solid transparent',
-    _selected: {
-      color: 'blue.500',
-      borderColor: 'blue.500',
-    },
-    _active: {
-      color: 'blue.500',
-      borderColor: 'blue.500',
-    },
-    _hover: {
-      color: 'blue.500',
-      borderColor: 'blue.500',
-    },
-  };
 
   const panelStyles = {
     p: '1em',
   };
-  const gradient = {
-    backgroundImage:
-      'linear-gradient(to right, rgba(31, 10, 10, 1) calc((50vw - 170px) - 340px), rgba(31, 10, 10, 0.84) 50%, rgba(31, 10, 10, 0.84) 100%)',
-  };
+
   return (
     <div>
     <MainTemplates>
-    <Box
-          backgroundImage={`url(${movieData.bgImage})`}
+    <Box  
+          color="white"
           backgroundSize="cover"
           backgroundPosition="center"
           minHeight="50vh"
-          {...gradient}
+          backgroundImage={`url(${movieData.bgImage})`}
+          
       >
      <Tabs isFitted variant="enclosed">
-      <TabList mb="1em">
-        <Tab {...tabStyles} icon={<FontAwesomeIcon icon={faThList} />} fontSize="lg">
-          Summary
-        </Tab>
-        <Tab {...tabStyles} icon={<FontAwesomeIcon icon={faPlayCircle} />} fontSize="lg">
-          Watch Trailer
-        </Tab>
-      </TabList>
       <TabPanels>
         <TabPanel {...panelStyles}>
           <Box display="flex">
@@ -74,8 +47,12 @@ const MoviePage = () => {
               <Text fontSize="md" fontWeight="semibold" mb="0.5em">
                 {movieData.releaseDate} ({movieData.genres}) {movieData.duration}
               </Text>
+              <Text fontSize="2xl" fontWeight="bold" mb="0.5em">
+            Czy odważysz się wejść?
+          </Text>
               <Text>{movieData.description}</Text>
 
+          
               <VStack align="start" mt="1em">
                 <Text fontSize="lg" fontWeight="bold">
                   Ocena użytkowników
@@ -86,18 +63,20 @@ const MoviePage = () => {
                 <Text fontSize="lg" fontWeight="bold">
                   Odtwarzaj zwiastun
                 </Text>
-                <Button as={Link} href={movieData.trailerLink} colorScheme="blue" target="_blank">
+                <Button 
+                as={Link} 
+                href={movieData.trailerLink} 
+                colorScheme="blue" 
+                target="_blank"
+                leftIcon={<Icon as={FaPlayCircle} boxSize={20} />}>
                   Watch Trailer
                 </Button>
               </VStack>
             </Box>
           </Box>
         </TabPanel>
-        <TabPanel {...panelStyles}>
-          <Text fontSize="2xl" fontWeight="bold" mb="0.5em">
-            Czy odważysz się wejść?
-          </Text>
-          <Text>{movieData.description}</Text>
+       
+          
           <Text fontSize="lg" fontWeight="bold" mt="1em">
             Leigh Whannell
           </Text>
@@ -116,7 +95,6 @@ const MoviePage = () => {
           <Text fontSize="md" fontWeight="semibold">
             Screenplay
           </Text>
-        </TabPanel>
       </TabPanels>
     </Tabs>
     </Box>
