@@ -40,12 +40,21 @@ const MoviePage = () => {
   const panelStyles = {
     p: '1em',
   };
-  
+  const gradient = {
+    backgroundImage:
+      'linear-gradient(to right, rgba(31, 10, 10, 1) calc((50vw - 170px) - 340px), rgba(31, 10, 10, 0.84) 50%, rgba(31, 10, 10, 0.84) 100%)',
+  };
   return (
     <div>
     <MainTemplates>
-    <Box backgroundImage={`${movieData.bgImage}`} backgroundSize="cover" backgroundPosition="center" minHeight="50vh" >
-    <Tabs isFitted variant="enclosed">
+    <Box
+          backgroundImage={`url(${movieData.bgImage})`}
+          backgroundSize="cover"
+          backgroundPosition="center"
+          minHeight="50vh"
+          {...gradient}
+      >
+     <Tabs isFitted variant="enclosed">
       <TabList mb="1em">
         <Tab {...tabStyles} icon={<FontAwesomeIcon icon={faThList} />} fontSize="lg">
           Summary
