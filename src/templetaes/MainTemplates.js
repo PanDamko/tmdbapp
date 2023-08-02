@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
-import {  Box} from '@chakra-ui/react'
+import {  Center,Box} from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 const MainTemplates = ({children}) => {
   return (
@@ -13,8 +13,10 @@ const MainTemplates = ({children}) => {
     'linear(to-b, gray.700, gray.300)',
   ]}>
       <NavBar />
-      
+      <Center>
+      <Box  w='70%'>
       {children}
+      </Box ></Center>
       <Footer />
       </Box>
       </ChakraProvider>

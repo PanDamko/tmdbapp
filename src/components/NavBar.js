@@ -1,16 +1,16 @@
 
-import {  Box,  Flex, Input,  Avatar,HStack,Text,IconButton,Button,Menu,MenuButton,MenuList,MenuItem,MenuDivider,useDisclosure,useColorMode,Stack,Image,} from '@chakra-ui/react'
+import {  Box,  Flex, Avatar,HStack,Text,IconButton,Button,Menu,MenuButton,MenuList,MenuItem,MenuDivider,useDisclosure,useColorMode,Stack,Image,} from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
  import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 import Logo from "../images/free_logos_dribbble_ph.jpg"
 
 const Links = [
-  {name:'Home', slug:'/'}, 
-  {name:'Movie', slug:'/moviepage'},
-  {name:'Actor', slug:'/actorpage'},
-  {name:'Faq', slug:'/faqpage'},
-  {name:'Rules', slug:'/rulespage'}]
+  {name:'Strona główna', slug:'/'}, 
+  {name:'Filmy', slug:'/moviepage'},
+  {name:'Aktorzy', slug:'/actorpage'},
+  {name:'FAQ', slug:'/faqpage'},
+  {name:'Regulamin', slug:'/rulespage'}]
   
 
 
@@ -33,7 +33,7 @@ export default function Simple() {
             <Box><Image boxSize='60px' src={Logo} alt="" /> </Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <Link to={link.slug} key={link.slug}><Text  > {link.name}</Text></Link>
+                <Link to={link.slug} key={link.slug}><Text> {link.name}</Text></Link>
               ))}
             </HStack>
           </HStack>
@@ -42,7 +42,7 @@ export default function Simple() {
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
-            <Box><Input size='xs' placeholder='Szukaj' /></Box>
+            
 
 
           <Flex alignItems={'center'}>
