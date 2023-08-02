@@ -2,21 +2,26 @@ import React, {useState} from 'react'
 import Slider from "react-slick";
 import {Box, Image, Text} from '@chakra-ui/react'
 const Responsive = ({item}) => {
-    const[settings,setSettings]=useState({dots: true,
-        infinite: false,
-        speed: 2200,
-        slidesToShow: 7,
-        slidesToScroll: 3,
-        initialSlide: 0,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        pauseOnHover: true,
+    const[settings,setSettings]=useState({
+        dots: false,
+        infinite: true,
+        speed: 200,
+        slidesToShow: 6,
+        slidesToScroll: 5,
+        initialSlide: 3,
+        // className: "center",
+        // centerMode: true,
+        // centerPadding: "60px",
+        
+        // autoplay: true,
+        // autoplaySpeed: 2000,
+        // pauseOnHover: true,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 6,
-              slidesToScroll: 3,
+              slidesToShow: 5,
+              slidesToScroll: 4,
               infinite: true,
               dots: true
             }
@@ -25,7 +30,7 @@ const Responsive = ({item}) => {
             breakpoint: 600,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 2,
+              slidesToScroll: 3,
               initialSlide: 0
             }
           },
@@ -33,7 +38,7 @@ const Responsive = ({item}) => {
             breakpoint: 480,
             settings: {
               slidesToShow: 3,
-              slidesToScroll: 3
+              slidesToScroll: 2
             }
           }
         ]})
@@ -43,7 +48,7 @@ const Responsive = ({item}) => {
         
    <Slider {...settings}>
 
-          {item.data.results.map((x)=><Box><Image key={x.id}src={`https://image.tmdb.org/t/p/original/${x.poster_path}`} alt=''/>
+          {item.data.results.map((x)=><Box key={x.id}><Image onDoubleClick={()=>console.log(x.id)}  src={`https://image.tmdb.org/t/p/original/${x.poster_path}`} alt=''/>
           {/* <Text>{x.title}</Text>  */}
           </Box>  )}
         </Slider>
