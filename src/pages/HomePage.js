@@ -13,6 +13,7 @@ const HomePage = () => {
   const topratedSerials = useFetch('https://api.themoviedb.org/3/tv/top_rated')
   const trending = useFetch('https://api.themoviedb.org/3/trending/all/day')
   
+  
   return (
     <div>
       <MainTemplates>

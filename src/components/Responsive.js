@@ -1,14 +1,21 @@
 import React, {useState} from 'react'
 import Slider from "react-slick";
-import {Box, Image, Text} from '@chakra-ui/react'
+import {Box, Image, Text, } from '@chakra-ui/react'
+import {useNavigate, Link} from "react-router-dom"
 const Responsive = ({item}) => {
+
+  const navigate = useNavigate();
+  const handleNavigate = (x)=>{
+    //console.log(x);
+         navigate(`/details`, {state:{item: x}})
+     }
     const[settings,setSettings]=useState({
         dots: false,
         infinite: true,
         speed: 200,
         slidesToShow: 6,
         slidesToScroll: 5,
-        initialSlide: 3,
+        initialSlide: 0,
         // className: "center",
         // centerMode: true,
         // centerPadding: "60px",
@@ -48,7 +55,7 @@ const Responsive = ({item}) => {
         
    <Slider {...settings}>
 
-          {item.data.results.map((x)=><Box key={x.id}><Image onDoubleClick={()=>console.log(x.id)}  src={`https://image.tmdb.org/t/p/original/${x.poster_path}`} alt=''/>
+          {item.data.results.map((x)=><Box borderRadius="5px" key={x.id}><Link to={`/details/${x.id}`} ><Image borderRadius="5px" onDoubleClick={()=>handleNavigate(x.id)}  src={`https://image.tmdb.org/t/p/original/${x.poster_path}`} alt=''/></Link>
           {/* <Text>{x.title}</Text>  */}
           </Box>  )}
         </Slider>
