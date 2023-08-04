@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Slider from "react-slick";
 import {Box, Image,  } from '@chakra-ui/react'
 import {useNavigate, Link} from "react-router-dom"
-const Responsive = ({item}) => {
+const ResponsveSliderDetailsFilms = ({item}) => {
 
   const navigate = useNavigate();
   const handleNavigate = (x)=>{
@@ -55,7 +55,7 @@ const Responsive = ({item}) => {
         
    <Slider {...settings}>
 
-          {item.data.results.map((x)=><Box borderRadius="5px" key={x.id}><Link to={`/details/${x.id}`} ><Image borderRadius="5px" onDoubleClick={()=>handleNavigate(x.id)}  src={`https://image.tmdb.org/t/p/original/${x.poster_path}`} alt=''/></Link>
+          {item.map((x)=><Box borderRadius="5px" key={x.id}><Link to={`/details/${x.id}`} ><Image borderRadius="5px" onDoubleClick={()=>handleNavigate(x.credit_id)}  src={`https://image.tmdb.org/t/p/original/${x.profile_path}`} alt=''/></Link>
           {/* <Text>{x.title}</Text>  */}
           </Box>  )}
         </Slider>
@@ -65,4 +65,4 @@ const Responsive = ({item}) => {
   )
 }
 
-export default Responsive
+export default ResponsveSliderDetailsFilms
