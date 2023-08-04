@@ -10,6 +10,7 @@ const HomePage = () => {
   const popularFilms = useFetch('https://api.themoviedb.org/3/movie/popular');
   const popularSerials = useFetch('https://api.themoviedb.org/3/tv/top_rated')
   const trending = useFetch('https://api.themoviedb.org/3/trending/movie/day')
+
   return (
     <div>
       <MainTemplates>
