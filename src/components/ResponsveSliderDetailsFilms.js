@@ -9,6 +9,7 @@ const ResponsveSliderDetailsFilms = ({item}) => {
     //console.log(x);
          navigate(`/details`, {state:{item: x}})
      }
+    // eslint-disable-next-line no-unused-vars
     const[settings,setSettings]=useState({
         dots: false,
         infinite: true,

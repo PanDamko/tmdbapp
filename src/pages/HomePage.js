@@ -29,6 +29,7 @@ const HomePage = () => {
        <Box color='gray.50'  ><Responsive films={films}/></Box>
        <h1>obejrzyj za darmo</h1>
        <Box color='gray.50'  ><Responsive films={films}/></Box> */}
+       
       </MainTemplates>
     </div>
   )
