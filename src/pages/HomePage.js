@@ -7,6 +7,8 @@ import { useFetch } from '../components/UseFetch'
 import SearchResults from '../components/SearchResults';    
 const HomePage = () => {
   
+
+
   const popularFilms = useFetch('https://api.themoviedb.org/3/movie/popular');
   const popularSerials = useFetch('https://api.themoviedb.org/3/tv/top_rated')
   const trending = useFetch('https://api.themoviedb.org/3/trending/movie/day')
