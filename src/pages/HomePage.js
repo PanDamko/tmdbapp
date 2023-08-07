@@ -10,7 +10,10 @@ const HomePage = () => {
   const popularFilms = useFetch('https://api.themoviedb.org/3/movie/popular');
   const popularSerials = useFetch('https://api.themoviedb.org/3/tv/top_rated')
   const trending = useFetch('https://api.themoviedb.org/3/trending/movie/day')
-
+ const upcoming = useFetch('https://api.themoviedb.org/3/movie/now_playing')
+ const topRated = useFetch('https://api.themoviedb.org/3/movie/top_rated')
+ const topRatedseries = useFetch('https://api.themoviedb.org/3/tv/top_rated')
+ //const popularpeople = useFetch('https://api.themoviedb.org/3/person/popular')
   return (
     <div>
       <MainTemplates>
@@ -25,11 +28,17 @@ const HomePage = () => {
         <Box color='gray.50'  >{popularSerials.loading ? <h1> Loading...</h1>: <Responsive item={popularSerials}/>}</Box>
        <h1> Trending</h1>
        <Box color='gray.50'  >{trending.loading ? <h1> Loading...</h1>: <Responsive item={trending}/>}</Box>
-     {/*  <h1>popularne</h1>
-       <Box color='gray.50'  ><Responsive films={films}/></Box>
-       <h1>obejrzyj za darmo</h1>
-       <Box color='gray.50'  ><Responsive films={films}/></Box> */}
-       
+       <h1>Nadchodzące filmy</h1>
+       <Box color='gray.50'  >{upcoming.loading ? <h1> Loading...</h1>: <Responsive item={upcoming}/>}</Box>
+       <h1>NAjlepiej oceniane</h1>
+       <Box color='gray.50'  >{topRated.loading ? <h1> Loading...</h1>: <Responsive item={topRated}/>}</Box>
+       <h1>NAjlepiej oceniane</h1>
+       <Box color='gray.50'  >{topRatedseries.loading ? <h1> Loading...</h1>: <Responsive item={topRatedseries}/>}</Box>
+       {/* <h1>Popularne osoby</h1>
+       <Box color='gray.50'  >{popularpeople.loading ? <h1> Loading...</h1>: <Responsive item={popularpeople}/>}</Box> */}
+
+
+
       </MainTemplates>
     </div>
   )

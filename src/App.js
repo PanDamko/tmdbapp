@@ -5,6 +5,7 @@ import FaqPage from './pages/FaqPage'
 import RulesPage from './pages/RulesPage'
 import { BrowserRouter, Route, Routes, } from "react-router-dom"
 import DetailsFilmPage from './pages/DetailsFilmPage'
+import FullCredtisPage from './pages/FullCredtisPage'
 //klucz APi
 //5ca55bf15fc84068dd2fd8e2acf4df01
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/faqpage" element={<FaqPage />} />
           <Route path="/rulespage" element={<RulesPage />} />
           <Route path="/details/:movieid" element={<DetailsFilmPage />} />
+          <Route path="/credits/:movieid" element={<FullCredtisPage />} />
         </Routes>
       </BrowserRouter>
     </div>
