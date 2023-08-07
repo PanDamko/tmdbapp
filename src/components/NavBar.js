@@ -8,9 +8,10 @@ import Logo from "../images/free_logos_dribbble_ph.jpg"
 const Links = [
   {name:'Strona główna', slug:'/'}, 
   {name:'Filmy', slug:'/moviepage'},
+  {name:'Seriale', slug:'/series'},
   {name:'Aktorzy', slug:'/actorpage'},
-  {name:'FAQ', slug:'/faqpage'},
-  {name:'Regulamin', slug:'/rulespage'}]
+  {name:'FAQ', slug:'/faqpage'}]
+ 
   
 
 

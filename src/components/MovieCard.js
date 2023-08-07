@@ -28,9 +28,20 @@ const MovieCard = ({ movie }) => {
 
 const MovieList = () => {
   const [movieData, setMovieData] = useState([]);
+<<<<<<< HEAD
   const [visibleMovies, setVisibleMovies] = useState(10);
   const [sortOption, setSortOption] = useState('rating');
   const moviesPerRow = 5;
+=======
+  // eslint-disable-next-line no-unused-vars
+  const [visibleMovies, setVisibleMovies] = useState(10); 
+  const [sortOption, setSortOption] = useState('rating'); 
+  const moviesPerRow = 5;
+  // eslint-disable-next-line no-unused-vars
+  const rowsPerPage = 2;
+
+  const [currentPage, setCurrentPage] = useState(1);
+>>>>>>> 172c503c02261a2593b6cbbf23af016cc9f90ee7
 
   useEffect(() => {
     const fetchMovieData = async () => {
