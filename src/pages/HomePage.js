@@ -1,7 +1,7 @@
 import React  from 'react'
 import MainTemplates from '../templetaes/MainTemplates'
 
-import { Text, Box, Center} from '@chakra-ui/react'
+import {  Text, Box, Center} from '@chakra-ui/react'
 import Responsive from '../components/Responsive'
 import { useFetch } from '../components/UseFetch'
 import SearchResults from '../components/SearchResults';    
@@ -15,7 +15,7 @@ const HomePage = () => {
     <div>
       <MainTemplates>
         <Center>
-      <Box borderRadius="5%" background='url(https://i.pravatar.cc/300) center/cover no-repeat' w="80" >
+      <Box borderRadius="5%" background='url(https://i.pravatar.cc/300) center/cover no-repeat' w="80%" >
         <Box display='flex' alignItems='center' flexDirection="column"><Text>Witamy na naszej stronie.</Text>
       <SearchResults />
 </Box>
