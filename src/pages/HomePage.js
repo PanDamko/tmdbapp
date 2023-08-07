@@ -1,10 +1,10 @@
 import React  from 'react'
 import MainTemplates from '../templetaes/MainTemplates'
 
-import { Input, Text, Box, Center} from '@chakra-ui/react'
+import { Text, Box, Center} from '@chakra-ui/react'
 import Responsive from '../components/Responsive'
 import { useFetch } from '../components/UseFetch'
-
+import SearchResults from '../components/SearchResults';    
 const HomePage = () => {
   
   const popularFilms = useFetch('https://api.themoviedb.org/3/movie/popular');
@@ -17,7 +17,8 @@ const HomePage = () => {
         <Center>
       <Box borderRadius="5%" background='url(https://i.pravatar.cc/300) center/cover no-repeat' w="80" >
         <Box display='flex' alignItems='center' flexDirection="column"><Text>Witamy na naszej stronie.</Text>
-        <Input w="50%" size='md' placeholder='Szukaj' /></Box>
+      <SearchResults />
+</Box>
         </Box></Center>
        <h1> Popularne filmy</h1>
        <Box color='gray.50'  >{popularFilms.loading ? <h1> Loading...</h1>: <Responsive item={popularFilms}/>}</Box>
