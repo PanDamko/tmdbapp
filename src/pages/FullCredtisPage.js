@@ -30,7 +30,7 @@ const FullCredtisPage = () => {
       return(
         <WrapItem>
         <Card >
-        <Center><Image key={x.file_path} boxSize='200px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /></Center><Text><Center>{`${x.name}`}</Center></Text>
+        <Center><Image key={x.file_path} objectFit="cover" width='300px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /></Center><Text><Center>{`${x.name}`}</Center></Text>
         </Card></WrapItem>
       )
      })

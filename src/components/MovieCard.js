@@ -30,9 +30,11 @@ const MovieCard = ({ movie }) => {
 
 const MovieList = () => {
   const [movieData, setMovieData] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [visibleMovies, setVisibleMovies] = useState(10); 
   const [sortOption, setSortOption] = useState('rating'); 
   const moviesPerRow = 5;
+  // eslint-disable-next-line no-unused-vars
   const rowsPerPage = 2;
 
   const [currentPage, setCurrentPage] = useState(1);

@@ -23,20 +23,20 @@ const HomePage = () => {
       <SearchResults />
 </Box>
         </Box></Center>
-       <h1> Popularne filmy</h1>
-       <Box color='gray.50'  >{popularFilms.loading ? <h1> Loading...</h1>: <Responsive item={popularFilms}/>}</Box>
-       <h1> Popularne seriale</h1>
-        <Box color='gray.50'  >{popularSerials.loading ? <h1> Loading...</h1>: <Responsive item={popularSerials}/>}</Box>
-       <h1> Trending</h1>
-       <Box color='gray.50'  >{trending.loading ? <h1> Loading...</h1>: <Responsive item={trending}/>}</Box>
-       <h1>Nadchodzące filmy</h1>
-       <Box color='gray.50'  >{upcoming.loading ? <h1> Loading...</h1>: <Responsive item={upcoming}/>}</Box>
-       <h1>NAjlepiej oceniane</h1>
-       <Box color='gray.50'  >{topRated.loading ? <h1> Loading...</h1>: <Responsive item={topRated}/>}</Box>
-       <h1>NAjlepiej oceniane</h1>
-       <Box color='gray.50'  >{topRatedseries.loading ? <h1> Loading...</h1>: <Responsive item={topRatedseries}/>}</Box>
-       {/* <h1>Popularne osoby</h1>
-       <Box color='gray.50'  >{popularpeople.loading ? <h1> Loading...</h1>: <Responsive item={popularpeople}/>}</Box> */}
+       <Center><Text fontSize='2xl'> Popularne filmy</Text></Center>
+       <Box color='gray.50'  >{popularFilms.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={popularFilms}/>}</Box>
+       <Center><Text fontSize='2xl'> Popularne seriale</Text></Center>
+        <Box color='gray.50'  >{popularSerials.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={popularSerials}/>}</Box>
+       <Center><Text fontSize='2xl'> Trending</Text></Center>
+       <Box color='gray.50'  >{trending.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={trending}/>}</Box>
+       <Center><Text fontSize='2xl'>Nadchodzące filmy</Text></Center>
+       <Box color='gray.50'  >{upcoming.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={upcoming}/>}</Box>
+       <Center><Text fontSize='2xl'>Najlepiej oceniane filmy</Text></Center>
+       <Box color='gray.50'  >{topRated.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={topRated}/>}</Box>
+       <Center><Text fontSize='2xl'>Najlepiej oceniane seriale</Text></Center>
+       <Box color='gray.50'  >{topRatedseries.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={topRatedseries}/>}</Box>
+       {/* <Center><Text fontSize='2xl'>Popularne osoby</Text></Center>
+       <Box color='gray.50'  >{popularpeople.loading ? <Center><Text fontSize='2xl'> Loading...</Text></Center>: <Responsive item={popularpeople}/>}</Box> */}
 
 
 

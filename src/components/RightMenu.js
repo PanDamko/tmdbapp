@@ -2,9 +2,9 @@ import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa'
 import React from 'react'
 import { FetchPromise } from './FetchPromise'
 import { Spinner} from '@chakra-ui/react'
-import { Box, Stack, chakra, Text, useColorModeValue, VisuallyHidden, } from '@chakra-ui/react'
+import { Flex, Spacer, Box, Stack, chakra, Text, useColorModeValue, VisuallyHidden, } from '@chakra-ui/react'
 const RightMenu = ({ movieid }) => {
-    const alldata = FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/external_ids`)
+    const alldata = FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/external_ids`,`https://api.themoviedb.org/3/movie/${movieid}/keywords`,`https://api.themoviedb.org/3/movie/${movieid}/remote/popularity`)
     const SocialButton = ({
         children,
         label,
@@ -49,33 +49,29 @@ const RightMenu = ({ movieid }) => {
           </SocialButton>
         </Stack>
 
+<Flex direction="column">
+        <Text>Stan:</Text><Text> {alldata[0].status}</Text><Spacer />
+<       Text>Oryginalny język:</Text><Text> angielski</Text><Spacer />
 
-        <Text>Stan: {alldata[0].status}</Text>
-<       Text>Oryginalny język angielski</Text>
+<Text>Budżet:</Text><Text>{alldata[0].budget}$</Text><Spacer />
 
-<Text>Budżet:{alldata[0].budget}$</Text>
+<Text>Dochód:</Text><Text>{alldata[0].revenue}$</Text><Spacer />
 
-<Text>Dochód:{alldata[0].revenue}$</Text>
-
-            <Text>Słowa kluczowe
-
-                feminism
-                patriarchy
-                satire
-                based on toy
-                female protagonist
-                doll
-                fantasy world
-                motherhood
-                existentialism
-                woman director
-                mother daughter relationship</Text>
+            <Text>Słowa kluczowe:</Text>
+            <Text>
+         
+              {alldata[2].keywords.map((x)=>{
+               
+                return(
+                  <Text>{x.name}</Text>
+                )
+              })}
+            </Text>
 
 
 
 
-
-            <Text>Trend popularności</Text>
+           </Flex>
             </Box>
 }
         </div>

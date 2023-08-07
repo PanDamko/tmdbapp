@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Spinner, Image, Tab, TabList, TabPanel, TabPanels, Tabs, } from '@chakra-ui/react'
+import { Center, Spinner, Image, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import Slider from "react-slick";
 import { Link} from "react-router-dom"
 import { FetchPromise } from './FetchPromise';
-import { AspectRatio } from '@chakra-ui/react'
+import { Wrap, WrapItem, AspectRatio, Flex} from '@chakra-ui/react'
 const TabFilms = ({ movieid }) => {
 
   // eslint-disable-next-line no-unused-vars
@@ -21,7 +21,7 @@ const TabFilms = ({ movieid }) => {
     <div>
       {alldata === undefined ? <Spinner /> :
         <Tabs variant='enclosed'>
-          Media
+          <Center><Text fontSize='4xl'>Media</Text></Center>
           <TabList>
             <Tab>Filmy</Tab>
             <Tab>Tła</Tab>
@@ -29,19 +29,21 @@ const TabFilms = ({ movieid }) => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <Slider {...settings}>
-              {alldata[0].results.map((x) => {
+              
+            <Flex direction="row" justify="space-between">
+              <Wrap>
+              {alldata[0].results === 0 ? <Text>Brak zwiastunów</Text>:alldata[0].results.map((x) => {
                 
-                return (<AspectRatio key={x.key} minW = '300px' maxW='560px' ratio={1}>
+                return (<WrapItem><AspectRatio key={x.key} minW = '300px' maxW='400px' ratio={1}>
                   <iframe
                     key={x.key}
                     title={x.name}
-                    src={`https://${x.site}.com/watch?v=${x.key}`}
+                    src={`https://${x.site}.com/embed/${x.key}`}
                     allowFullScreen
                   />
-                </AspectRatio>)
-              })}
-              </Slider>
+                </AspectRatio></WrapItem>)
+              })}</Wrap></Flex>
+              
             </TabPanel>
             <TabPanel>
             <Slider {...settings}>

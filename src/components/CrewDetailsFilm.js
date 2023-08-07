@@ -17,14 +17,14 @@ const CrewDetailsFilm = ({movieid}) => {
 
   return (
     <Box>
-        Najlepiej opłacana obsada ( <Link to={`/credits/${movieid}`}>Pełna Obsada</Link> )
+       <Center><Text fontSize='4xl'> Najlepiej opłacana obsada ( <Link to={`/credits/${movieid}`}>Pełna Obsada</Link> )</Text></Center>
       {alldata === undefined ? <Spinner /> :
           
             <Slider {...settings}>
                 
             {alldata[0].cast.slice(0,10).map((x)=>{
-              return (<Card >
-                <Link key={x.file_path} target="_blank" to={`https://www.google.com`}><Image key={x.file_path} boxSize='200px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /><Text><Center>{`${x.name}`}</Center></Text></Link>
+              return (<Card > 
+                <Link key={x.file_path} target="_blank" to={`https://www.google.com`}><Image key={x.file_path} boxSize='200px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /><Text isTruncated key={x.file_path}><Center key={x.file_path}>{`${x.name}`}</Center></Text></Link>
                 </Card> )            })}
               
             </Slider>
