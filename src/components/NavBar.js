@@ -34,7 +34,7 @@ export default function Simple() {
             <Box><Image boxSize='60px' src={Logo} alt="" /> </Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <Link to={link.slug} key={link.slug}><Text> {link.name}</Text></Link>
+                <Link to={link.slug} key={link.slug}><Text fontSize="2xl"> {link.name}</Text></Link>
               ))}
             </HStack>
           </HStack>

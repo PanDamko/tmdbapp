@@ -3,7 +3,7 @@ import { FetchPromise } from './FetchPromise';
 import Slider from "react-slick";
 import { Link} from "react-router-dom"
 import { Spinner, Image,  Box, Text, Card, Center,   } from '@chakra-ui/react'
-const CrewDetailsFilm = ({movieid}) => {
+const CrewDetailsFilm = ({movieid,series}) => {
   // eslint-disable-next-line no-unused-vars
   const[settings,setSettings]=useState({
     dots: false,
@@ -12,7 +12,11 @@ const CrewDetailsFilm = ({movieid}) => {
     slidesToShow: 6,
     slidesToScroll: 1,
     initialSlide: 0})
-  const alldata = FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}/credits`)
+
+    let linkk=""
+    series==="true" ? linkk=`https://api.themoviedb.org/3/tv/${movieid}/credits`: linkk=`https://api.themoviedb.org/3/movie/${movieid}/credits`
+
+  const alldata = FetchPromise(linkk)
 
 
   return (
