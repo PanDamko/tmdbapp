@@ -19,11 +19,11 @@ const SeasonPage = () => {
                             <Card key={x.id}><Flex justifyContent={'space-between'} >
                                 <Box >
                                     <Card height={'100%'} width={'100%'} justifyContent={'space-between'}><CardHeader>
-                                        <Center><Text fontSize={'xl'}>Odcinek:&nbsp;{x.episode_number}</Text></Center>
+                                        <Center><Text fontSize={'md'}>Odcinek:&nbsp;{x.episode_number}</Text></Center>
                                         <Center><Text fontSize={'3xl'}>Tytuł:&nbsp;{x.name}</Text></Center></CardHeader>
 
                                         <CardBody>
-                                            <Text fontSize={'2xl'}>Opis:&nbsp;{x.overview}</Text>
+                                            <Text fontSize={'md'}>Opis:&nbsp;{x.overview}</Text>
                                         </CardBody>
 
                                         <CardFooter justifyContent={'space-between'}>

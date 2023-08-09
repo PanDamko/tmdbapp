@@ -36,6 +36,7 @@ const useActorsData = (currentPage) => {
     };
 
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   return { actorsData, isLoading, error, totalPages };
@@ -64,6 +65,7 @@ const ActorsList = () => {
 
   const navigate = useNavigate();
 
+  // eslint-disable-next-line no-unused-vars
   const handleNavigateActor = (index) => {
     navigate(`/DetailsActorPage`, { state: { item: index } });
   };
