@@ -9,6 +9,7 @@ import FullCredtisPage from './pages/FullCredtisPage'
 import SeriesPage from './pages/SeriesPage'
 import SeasonPage from './pages/SeasonPage'
 import DetailsActorPage from './pages/DetailsActorPage'
+import DetailSeriesPage from './components/DetailSeriesPage'
 //klucz APi
 //5ca55bf15fc84068dd2fd8e2acf4df01
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/credits/:movieid" element={<FullCredtisPage />} />
           <Route path="/season/:movieid/:season/" element={<SeasonPage />} />
           <Route path="/DetailsActorPage/:actorid" element={<DetailsActorPage />} />
+          <Route path="/DetailSeriesID/:seriesid" element={<DetailSeriesPage />} />
         </Routes>
       </BrowserRouter>
     </div>
