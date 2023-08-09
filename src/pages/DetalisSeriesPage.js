@@ -6,6 +6,7 @@ import { Box, Flex} from '@chakra-ui/react';
 import CrewDetailsFilm from '../components/CrewDetailsFilm'
 import TabSeries from'../components/TabSeries'
 
+
 const DetalisSeriesPage = () => {
   let { movieid } = useParams();
   return (

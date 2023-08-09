@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes, } from "react-router-dom"
 import DetailsFilmPage from './pages/DetailsFilmPage'
 import FullCredtisPage from './pages/FullCredtisPage'
 import SeriesPage from './pages/SeriesPage'
+import SeasonPage from './pages/SeasonPage'
 //klucz APi
 //5ca55bf15fc84068dd2fd8e2acf4df01
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/detailsseries/:movieid" element={<DetalisSeriesPage />} />
           <Route path="/details/:movieid" element={<DetailsFilmPage />} />
           <Route path="/credits/:movieid" element={<FullCredtisPage />} />
+          <Route path="/season/:movieid/:season/" element={<SeasonPage />} />
 
         </Routes>
       </BrowserRouter>

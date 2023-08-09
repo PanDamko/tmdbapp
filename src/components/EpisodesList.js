@@ -73,16 +73,16 @@ function  descri(){
             {alldata[0].seasons.map((x)=>{
                 return(
                     <Box >
-                     {/* <Link to={`https://www.google.com`}> */}
+                      <Link to={`/season/${movieid}/${x.season_number}/`}> 
                     <Box height={'30vh'} color={'white'} border={'solid'} onClick={()=>setPo(x.overview)}background={`url(https://image.tmdb.org/t/p/original/${x.poster_path})`} objectFit={'scale-down'} filter={'grayscale(90%)'}>
-
+                      {console.log(x)}
                     <Text fontWeight={'bold'} fontSize='4xl'>{x.name}</Text>
                     <Text fontWeight={'bold'} fontSize='4xl'>Data wydania:{x.air_date}</Text>
                     {/* <Text>Opis: {x.overview}</Text> */}
                     <Text fontWeight={'bold'} fontSize='4xl'>Ilośc odcinków:{x.episode_count}</Text>
                     
                     </Box>
-                    {/* </Link> */}
+                    </Link> 
                     </Box>   
 
                 )
