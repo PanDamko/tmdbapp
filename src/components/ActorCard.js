@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box,Flex, Image, Text, Stack } from '@chakra-ui/react';
+import { Box, Image, Text, Stack } from '@chakra-ui/react';
 
 const ActorCard = ({ actor }) => {
   const { name, profile_path, known_for_department, known_for } = actor;
+
 
   return (
     <Box maxW="xs" borderWidth="1px" borderRadius="lg" overflow="hidden">
@@ -19,11 +20,9 @@ const ActorCard = ({ actor }) => {
           <Text fontWeight="bold" fontSize="sm">
             Znany z:
           </Text>
-          <Flex justifyContent="center">
           {known_for.map((movie) => (
             <Text key={movie.id}>{movie.original_title}</Text>
           ))}
-          </Flex>
         </Stack>
       </Box>
     </Box>
