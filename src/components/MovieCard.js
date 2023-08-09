@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Box, Grid, Image, Select, Text, Stack, Button, CircularProgress, CircularProgressLabel } from '@chakra-ui/react';
-import {useNavigate, Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const { original_title, poster_path, release_date, vote_average } = movie;
@@ -26,16 +26,13 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-
-
 const MovieList = () => {
   const [movieData, setMovieData] = useState([]);
-  // eslint-disable-next-line no-unused-vars
-  const [visibleMovies, setVisibleMovies] = useState(10); 
-  const [sortOption, setSortOption] = useState('rating'); 
+  const [visibleMovies, setVisibleMovies] = useState(10);
+  const [sortOption, setSortOption] = useState('rating');
   const moviesPerRow = 5;
   // eslint-disable-next-line no-unused-vars
-  const rowsPerPage = 2;
+
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -43,34 +40,23 @@ const MovieList = () => {
     const fetchMovieData = async () => {
       try {
         const apiKey = '17c82726588bd065f78c9991dde2a619';
-        const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`;
+        const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
         const response = await fetch(url);
         const data = await response.json();
 
-        // Dodawanie kolejnych filmów do istniejącej listy, ale tylko jeśli są nowe dane
-        setMovieData((prevData) => [...new Set([...prevData, ...data.results])]);
+        // Ustawiamy wszystkie filmy pobrane z API
+        setMovieData(data.results);
       } catch (error) {
         console.error('Error fetching movie data:', error);
       }
     };
 
     fetchMovieData();
-  }, [currentPage]);
-
-  const handleLoadMore = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
+  }, []);
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
   };
- 
-  const navigate = useNavigate();
-
-  const handleNavigate = (index)=>{
-    //console.log(x);
-         navigate(`/details`, {state:{item: index}})
-     }
 
   const sortMovies = (movies, option) => {
     switch (option) {
@@ -91,7 +77,16 @@ const MovieList = () => {
     }
   };
 
- 
+  const navigate = useNavigate();
+
+  const handleNavigate = (index) => {
+    navigate(`/details`, { state: { item: index } });
+  };
+
+  const handleLoadMore = () => {
+    setVisibleMovies((prevVisibleMovies) => prevVisibleMovies + 10);
+  };
+
   if (!movieData.length) {
     return <div>Loading...</div>;
   }
@@ -100,9 +95,8 @@ const MovieList = () => {
 
   return (
     <>
-       <Box p="4" width="100%" bg="gray.200">
+      <Box p="4" width="100%" bg="gray.200">
         <Text>Popularne Filmy</Text>
-
         <Text>Sortuj</Text>
         <Select value={sortOption} onChange={handleSortChange}>
           <option value="title-asc">Sortuj A-Z</option>
@@ -114,12 +108,12 @@ const MovieList = () => {
         </Select>
       </Box>
 
-
- <Grid templateColumns={`repeat(${moviesPerRow}, 1fr)`} gap={4}>
+      <Grid templateColumns={`repeat(${moviesPerRow}, 1fr)`} gap={4}>
         {sortMovies(visibleMovieData, sortOption).map((movie, index) => (
           <Box key={index}>
-
-          <Link to={`/details/${movie.id}`}> <MovieCard onDoubleClick={()=>handleNavigate(movie.credit_id)} movie={movie}/> </Link>
+            <Link to={`/details/${movie.id}`}>
+              <MovieCard movie={movie} />
+            </Link>
           </Box>
         ))}
       </Grid>
