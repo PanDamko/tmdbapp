@@ -1,11 +1,19 @@
-import { useState } from 'react';
-import { Input, Button, Box, Stack } from '@chakra-ui/react';
-import Karta from './Karta';
+import React, { useState } from 'react';
+import { Input, Button, Box, Stack, Select } from '@chakra-ui/react';
+import { useNavigate, Link } from "react-router-dom";
 
 const SearchResults = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [movieData, setMovieData] = useState([]);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
+  const navigate = useNavigate();
+
+
+
+
+  const handleNavigate = (index) => {
+    navigate(`/details`, { state: { item: index } });
+  };
 
   const handleSearch = async () => {
     try {
@@ -30,20 +38,16 @@ const SearchResults = () => {
 
   return (
     <Box>
-      <Stack direction="row" spacing={4} mb={4} alignItems="center">
+      <Stack direction="row" spacing={2} mb={2} alignItems="center">
         <Input
-          w="50%" size='md'
+          w="50%"
+          size="md"
           type="text"
           placeholder="Szukaj..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           list="movie-suggestions"
         />
-        <datalist id="movie-suggestions">
-          {movieData.map((movie) => (
-            <option key={movie.id} value={movie.title} />
-          ))}
-        </datalist>
         <Button colorScheme="teal" onClick={handleSearch}>
           Szukaj
         </Button>
@@ -51,7 +55,21 @@ const SearchResults = () => {
 
       {selectedMovieId && (
         <Box my={1}>
-          <Karta movie={movieData.find((movie) => movie.id === selectedMovieId)} />
+          <Select
+            value={selectedMovieId}
+            onChange={(e) => setSelectedMovieId(e.target.value)}
+          >
+            {movieData.map((movie) => (
+              <option key={movie.id} value={movie.id}>
+                {movie.title}
+              </option>
+            ))}
+          </Select>
+          {selectedMovieId && (
+            <Link to={`/details/${selectedMovieId}`}>
+<Button>Zobacz więcej</Button>            </Link>
+          )}
+
         </Box>
       )}
     </Box>

@@ -6,7 +6,7 @@ import { FetchPromise } from './FetchPromise';
 
 const MainCardFilmDetails = ({ movieid }) => {
 
-const alldata =FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/videos?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/credits`)
+const alldata = FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/videos?language=PL`,`https://api.themoviedb.org/3/movie/${movieid}/credits`)
 
 
     

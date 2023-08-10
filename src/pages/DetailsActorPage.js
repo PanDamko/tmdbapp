@@ -9,13 +9,15 @@ const DetailsActorPage = () => {
 
   let { actorid } = useParams();
   
-  const alldata = FetchPromise (`https://api.themoviedb.org/3/person/${actorid}?language=PL`,`https://api.themoviedb.org/3/person/${actorid}/movie_credits?language=PL`)
+  const alldata = FetchPromise (`https://api.themoviedb.org/3/person/${actorid}?language=PL`)
 
 console.log(alldata);
+
   return (
     <div>
       <MainTemplates>
      { alldata === undefined ? <Spinner /> : 
+     
      <ChakraProvider>
       <Box p={4} borderWidth="1px" borderRadius="lg" maxW="400px">
         <Image src={`https://image.tmdb.org/t/p/w300${alldata[0].profile_path}`} alt={`${alldata[0].name}'s photo`} />
