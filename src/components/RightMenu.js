@@ -53,9 +53,9 @@ const RightMenu = ({ movieid }) => {
         <Text>Stan:</Text><Text> {alldata[0].status}</Text><Spacer />
 <       Text>Oryginalny język:</Text><Text> angielski</Text><Spacer />
 
-<Text>Budżet:</Text><Text>{alldata[0].budget}$</Text><Spacer />
+<Text>Budżet:</Text><Text>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'usd' }).format(alldata[0].budget)}</Text><Spacer />
 
-<Text>Dochód:</Text><Text>{alldata[0].revenue}$</Text><Spacer />
+<Text>Dochód:</Text><Text> {new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'usd' }).format(alldata[0].revenue)}</Text><Spacer />
 
             <Text>Słowa kluczowe:</Text>
             <Text>

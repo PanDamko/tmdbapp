@@ -21,7 +21,7 @@ const alldata = FetchPromise(`https://api.themoviedb.org/3/movie/${movieid}?lang
                         <Box> <Flex><Text as='b'>{alldata[0].release_date}&nbsp;</Text><Text></Text> {alldata[0].genres?.map((x) => <Text key={x.id}>{x.name}&nbsp;</Text>)}</Flex> </Box>
                         <Box> <Flex><CircularProgress value={alldata[0].vote_average * 10} color="teal" size="40px">
             <CircularProgressLabel>{alldata[0].vote_average}</CircularProgressLabel>
-          </CircularProgress>  {alldata[1].results[0] === undefined ? "":<Link target="_blank" to={`https://${alldata[1].results[0].site}.com/watch?v=${alldata[1].results[0].key}`}>&nbsp;Zwiatun</Link> }</Flex></Box>
+          </CircularProgress>  {alldata[1].results[0] === undefined ? "":<Link target="_blank" to={`https://${alldata[1].results[0].site}.com/watch?v=${alldata[1].results[0].key}`}>&nbsp;Zwiastun</Link> }</Flex></Box>
                         <Text>Tytuł oryginalny: {alldata[0].original_title}</Text>
                         <Text>{alldata[0].tagline}</Text>
                         <Text>Opis:</Text>

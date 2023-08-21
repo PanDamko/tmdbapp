@@ -36,7 +36,7 @@ linkk = `https://api.themoviedb.org/3/person/${actorid}/movie_credits?language=P
     <Box>
       <Slider {...settings}>
         {top10Cast.map((x) => (
-          <Card key={x.id}>
+         <Card key={x.id}>
             <Image
               boxSize="200px"
               src={`https://www.themoviedb.org/t/p/w150_and_h225_bestv2/${x.poster_path}`}

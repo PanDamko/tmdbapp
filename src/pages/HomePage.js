@@ -20,11 +20,12 @@ const HomePage = () => {
   return (
     <div>
       <MainTemplates>
+        
         <Center>
-          <Box background={bckh} filter="grayscale(95%)" objectFit="cover" width='200vh' height="50vh"  >
+          <Box background={bckh} filter="grayscale(95%) opacity(60%)" objectFit="cover" width='200vh' height="50vh"  >
            <Flex direction="column"   align="center" justify="flex-end" height="50vh"> 
            
-            <Box filter="none" display='flex' alignItems='center' flexDirection="column"><Text fontWeight='bold' fontSize='4xl' color="white" >Witamy na naszej stronie.</Text>
+            <Box filter="none" opacity="100%" display='flex' alignItems='center' flexDirection="column"><Text fontWeight='bold' fontSize='4xl' color="blue" filter={'none'} opacity={'100%'} >Witamy na naszej stronie.</Text>
               <SearchResults />
             </Box>
             </Flex>

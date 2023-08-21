@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, useParams} from "react-router-dom"
 import MainTemplates from '../templetaes/MainTemplates'
 import { FetchPromise } from '../components/FetchPromise'
-import { Card, Image, Text, Center, Spinner, WrapItem, Wrap,  CardBody } from '@chakra-ui/react'
-
+import { Card, Button, Image, Text, Center, Spinner, WrapItem, Wrap,  CardBody } from '@chakra-ui/react'
+import {ArrowForwardIcon} from '@chakra-ui/icons'
 const FullCredtisPage = () => {
  
   let { movieid } = useParams();
@@ -17,7 +17,7 @@ const FullCredtisPage = () => {
                     <Image boxSize='400px' src={`https://image.tmdb.org/t/p/original/${alldata[1].backdrop_path}`} alt='' borderRadius='1rem' />
                     <CardBody>
                         <Text as='b' fontSize='4xl'>{alldata[1].title} </Text>                   
-                        <Center><Text fontSize='3xl'><Link to={`/details/${movieid}`} >Wróć</Link></Text></Center>
+                        <Center><Text fontSize='3xl'><Link to={`/details/${movieid}`} ><Button rightIcon={<ArrowForwardIcon />} colorScheme='gray'>Wróc</Button></Link></Text></Center>
                     </CardBody>
 
                 </Card>

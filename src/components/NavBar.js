@@ -1,5 +1,5 @@
 
-import {  Box,  Flex, Avatar,HStack,Text,IconButton,Button,Menu,MenuButton,MenuList,MenuItem,MenuDivider,useDisclosure,useColorMode,Stack,Image,} from '@chakra-ui/react'
+import {  useColorModeValue, Box,  Flex, Avatar,HStack,Text,IconButton,Button,Menu,MenuButton,MenuList,MenuItem,MenuDivider,useDisclosure,useColorMode,Stack,Image,} from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
  import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
@@ -21,7 +21,7 @@ export default function Simple() {
  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
-      <Box  px={4}>
+      <Box  px={4} bg={useColorModeValue('gray.50', 'gray.900')}  minWidth={'100%'} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

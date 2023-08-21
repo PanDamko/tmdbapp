@@ -27,7 +27,7 @@ const SeriesCard = ({ seriesId }) => {
   }
 
   return (
-    <Link to={`/series/${seriesId}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/detailsseries/${seriesId}`} style={{ textDecoration: 'none' }}>
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Image src={`https://image.tmdb.org/t/p/w500${seriesData.poster_path}`} alt={seriesData.name} />
 

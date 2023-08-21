@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-    Drawer,
+    Drawer, Center,
     DrawerBody,
     DrawerFooter, Tooltip,
     DrawerHeader, Box, Text,
@@ -28,9 +28,9 @@ const EpisodesList = ({movieid}) => {
   return (
     <div>
         
-        <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+       <Center> <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
         Lista sezonów
-      </Button>
+      </Button></Center>
       {alldata === undefined ? <Spinner />:<Drawer
         isOpen={isOpen}
         placement='right'

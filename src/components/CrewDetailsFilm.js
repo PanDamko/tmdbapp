@@ -28,7 +28,7 @@ const CrewDetailsFilm = ({movieid,series}) => {
                 
             {alldata[0].cast.slice(0,10).map((x)=>{
               return (<Card > 
-                <Link key={x.file_path} target="_blank" to={`https://www.google.com`}><Image key={x.file_path} boxSize='200px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /><Text isTruncated key={x.file_path}><Center key={x.file_path}>{`${x.name}`}</Center></Text></Link>
+                <Link key={x.file_path} target="_blank" to={`/DetailsActorPage/${x.id}`}><Image key={x.file_path} boxSize='200px' src={`https://www.themoviedb.org/t/p/w138_and_h175_face/${x.profile_path}`} alt='' borderRadius='1%' /><Text isTruncated key={x.file_path}><Center key={x.file_path}>{`${x.name}`}</Center></Text></Link>
                 </Card> )            })}
               
             </Slider>

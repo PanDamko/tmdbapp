@@ -1,7 +1,8 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import MainTemplates from '../templetaes/MainTemplates';
-import { Text, Flex, CardHeader, CircularProgressLabel, CircularProgress, Image, Spinner, Card, Box, Center, CardFooter, CardBody } from '@chakra-ui/react';
+import {ArrowForwardIcon} from '@chakra-ui/icons'
+import { Text, Flex, CardHeader, Button, CircularProgressLabel, CircularProgress, Image, Spinner, Card, Box, Center, CardFooter, CardBody } from '@chakra-ui/react';
 import { FetchPromise } from '../components/FetchPromise';
 const SeasonPage = () => {
     let { movieid, season } = useParams();
@@ -13,7 +14,8 @@ const SeasonPage = () => {
             <MainTemplates>
                 {alldata === undefined ? <Spinner /> :
                     <Box ><Flex direction={'column'} gridGap={4} justifyContent={'space-between'}>
-                        <Text>{alldata[0].name} sezon {season}</Text>
+                       <Center> <Text fontSize={'3xl'} >{alldata[0].name} sezon {season}</Text></Center>
+                       <Center><Link to={`/detailsseries/${movieid}`}><Button rightIcon={<ArrowForwardIcon />} colorScheme='gray'>Wróc</Button></Link></Center>
                         {alldata[1].episodes.map((x) => {
                             return (
                             <Card key={x.id}><Flex justifyContent={'space-between'} >
